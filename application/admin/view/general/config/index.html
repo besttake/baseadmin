@@ -13,7 +13,7 @@
     <div class="panel-heading">
         {:build_heading(null, false)}
         <ul class="nav nav-tabs">
-            {foreach $siteList as $index=>$vo} 
+            {foreach $siteList as $index=>$vo}
             <li class="{$vo.active?'active':''}"><a href="#{$vo.name}" data-toggle="tab">{:__($vo.title)}</a></li>
             {/foreach}
             <li>
@@ -24,7 +24,7 @@
 
     <div class="panel-body">
         <div id="myTabContent" class="tab-content">
-            {foreach $siteList as $index=>$vo} 
+            {foreach $siteList as $index=>$vo}
             <div class="tab-pane fade {$vo.active ? 'active in' : ''}" id="{$vo.name}">
                 <div class="widget-body no-padding">
                     <form id="{$vo.name}-form" class="edit-form form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('general.config/edit')}">
@@ -111,7 +111,7 @@
                                                 </a>
                                                 {/case}
                                                 {case bool}
-                                                <label for="row[{$item.name}]-yes"><input id="row[{$item.name}]-yes" name="row[{$item.name}]" type="radio" value="1" {$item.value?'checked':''} data-tip="{$item.tip}" /> {:__('Yes')}</label> 
+                                                <label for="row[{$item.name}]-yes"><input id="row[{$item.name}]-yes" name="row[{$item.name}]" type="radio" value="1" {$item.value?'checked':''} data-tip="{$item.tip}" /> {:__('Yes')}</label>
                                                 <label for="row[{$item.name}]-no"><input id="row[{$item.name}]-no" name="row[{$item.name}]" type="radio" value="0" {$item.value?'':'checked'} data-tip="{$item.tip}" /> {:__('No')}</label>
                                                 {/case}
                                                 {/switch}
